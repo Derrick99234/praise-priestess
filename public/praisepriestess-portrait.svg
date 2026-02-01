@@ -1,0 +1,51 @@
+<svg width="1200" height="1400" viewBox="0 0 1200 1400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pp_bg" x1="156" y1="40" x2="1080" y2="1360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EC4899" stop-opacity="0.85"/>
+      <stop offset="0.45" stop-color="#8B5CF6" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0.65"/>
+    </linearGradient>
+    <radialGradient id="pp_glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(640 520) rotate(90) scale(680 720)">
+      <stop stop-color="#FFFFFF" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pp_sheen" x1="0" y1="0" x2="1200" y2="1400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="pp_blur" x="-200" y="-200" width="1600" height="1800" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1400" rx="120" fill="#070711"/>
+  <g opacity="0.92">
+    <path d="M-60 340C220 120 420 60 640 120C860 180 980 110 1280 -40V320C1040 520 870 610 640 600C410 590 240 720 -40 980L-60 340Z" fill="url(#pp_bg)" opacity="0.65" filter="url(#pp_blur)"/>
+    <path d="M-40 980C260 700 440 640 640 680C840 720 1030 690 1280 520V1460H-40V980Z" fill="url(#pp_bg)" opacity="0.45" filter="url(#pp_blur)"/>
+    <rect x="0" y="0" width="1200" height="1400" rx="120" fill="url(#pp_glow)"/>
+  </g>
+
+  <g opacity="0.92">
+    <path d="M600 280C716 280 804 374 804 488C804 580 744 656 664 684C752 712 824 788 848 884C872 980 852 1082 792 1164C732 1246 640 1292 540 1292C440 1292 348 1246 288 1164C228 1082 208 980 232 884C256 788 328 712 416 684C336 656 276 580 276 488C276 374 364 280 480 280H600Z" fill="#0B0B12"/>
+    <path d="M420 520C448 480 496 456 552 456H648C704 456 752 480 780 520C748 644 682 712 600 712C518 712 452 644 420 520Z" fill="#121222"/>
+  </g>
+
+  <g opacity="0.9">
+    <path d="M260 1060C340 980 452 936 600 936C748 936 860 980 940 1060C860 1196 748 1260 600 1260C452 1260 340 1196 260 1060Z" fill="#0A0A12"/>
+    <path d="M248 1060C338 948 462 888 600 888C738 888 862 948 952 1060" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <g opacity="0.2">
+    <path d="M-120 1040L520 360" stroke="url(#pp_sheen)" stroke-width="120" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <text x="600" y="210" text-anchor="middle" fill="#FFFFFF" fill-opacity="0.92" font-family="Arial, Helvetica, sans-serif" font-size="44" letter-spacing="0.5">
+      PraisePriestess
+    </text>
+    <text x="600" y="260" text-anchor="middle" fill="#FFFFFF" fill-opacity="0.62" font-family="Arial, Helvetica, sans-serif" font-size="22" letter-spacing="0.8">
+      Official photo goes here
+    </text>
+  </g>
+</svg>
