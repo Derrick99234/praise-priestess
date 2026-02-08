@@ -47,6 +47,72 @@ export default function Home() {
     },
   ] as const;
 
+  const portraits = [
+    {
+      src: "/images/praisepriestess-gallery-18.jpeg",
+      alt: "PraisePriestess gallery photo 18",
+    },
+    {
+      src: "/images/praisepriestess-portrait-01.jpeg",
+      alt: "PraisePriestess gallery photo 01",
+    },
+    {
+      src: "/images/praisepriestess-portrait-03.jpeg",
+      alt: "PraisePriestess gallery photo 03",
+    },
+  ] as const;
+
+  const galleryTiles = [
+    {
+      src: "/images/praisepriestess-gallery-01.jpeg",
+      alt: "PraisePriestess gallery photo 01",
+      colSpan: 2,
+      rowSpan: 2,
+    },
+    {
+      src: "/images/praisepriestess-gallery-02.jpeg",
+      alt: "PraisePriestess gallery photo 02",
+      colSpan: 1,
+      rowSpan: 1,
+    },
+    {
+      src: "/images/praisepriestess-gallery-03.jpeg",
+      alt: "PraisePriestess gallery photo 03",
+      colSpan: 1,
+      rowSpan: 1,
+    },
+    {
+      src: "/images/praisepriestess-gallery-07.jpeg",
+      alt: "PraisePriestess gallery photo",
+      colSpan: 2,
+      rowSpan: 1,
+    },
+    {
+      src: "/images/praisepriestess-gallery-06.jpeg",
+      alt: "PraisePriestess gallery photo 06",
+      colSpan: 1,
+      rowSpan: 1,
+    },
+    {
+      src: "/images/praisepriestess-gallery-09.jpeg",
+      alt: "PraisePriestess gallery photo 09",
+      colSpan: 1,
+      rowSpan: 1,
+    },
+    {
+      src: "/images/praisepriestess-gallery-10.jpeg",
+      alt: "PraisePriestess gallery photo 10",
+      colSpan: 1,
+      rowSpan: 1,
+    },
+    {
+      src: "/images/praisepriestess-gallery-12.jpeg",
+      alt: "PraisePriestess gallery photo 12",
+      colSpan: 1,
+      rowSpan: 1,
+    },
+  ] as const;
+
   return (
     <div className="relative min-h-dvh overflow-hidden bg-[#05050a] text-zinc-50">
       <div className="pointer-events-none absolute inset-0 opacity-90">
@@ -61,7 +127,7 @@ export default function Home() {
             href="#top"
             className="group inline-flex items-center gap-3 rounded-full px-2 py-1 transition-colors hover:bg-white/5"
           >
-            <div className="grid h-10 w-10 place-items-center rounded-2xl bg-linear-to-br from-fuchsia-500/90 via-violet-500/90 to-cyan-400/90 text-sm font-semibold tracking-wide text-black shadow-[0_20px_40px_rgba(168,85,247,0.25)]">
+            <div className="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-br from-fuchsia-500/90 via-violet-500/90 to-cyan-400/90 text-sm font-semibold tracking-wide text-black shadow-[0_20px_40px_rgba(168,85,247,0.25)]">
               PP
             </div>
             <div className="leading-tight">
@@ -78,7 +144,7 @@ export default function Home() {
             {[
               { label: "Profile", href: "#profile" },
               { label: "Discography", href: "#discography" },
-              { label: "Media", href: "#media" },
+              { label: "Gallery", href: "#media" },
               { label: "Listen", href: "#listen" },
             ].map((item) => (
               <a
@@ -114,9 +180,9 @@ export default function Home() {
               </h1>
 
               <p className="mt-4 max-w-xl text-pretty text-lg leading-8 text-zinc-200 sm:text-xl">
-                PraisePriestess releases worship-centered singles that celebrate
-                gratitude, praise, and testimony—songs like “Hallelujah”,
-                “Magnify the Lord”, and “A Joyful Song”.
+                PraisePriestess is a worship recording artist with singles that
+                carry praise, testimony, and joy—featuring titles like
+                “Hallelujah”, “Magnify the Lord”, and “A Joyful Song”.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -160,13 +226,36 @@ export default function Home() {
                 <div className="absolute -bottom-12 -left-16 h-72 w-72 rounded-full bg-cyan-400/15 blur-3xl" />
 
                 <div className="relative">
+                  <div className="grid gap-3">
+                    <div className="grid grid-cols-2 gap-3">
+                      <div className="relative h-[140px] overflow-hidden rounded-2xl border border-white/10 bg-black/25">
+                        <Image
+                          src={portraits[0].src}
+                          alt={portraits[0].alt}
+                          fill
+                          sizes="(max-width: 768px) 50vw, 260px"
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="relative h-[140px] overflow-hidden rounded-2xl border border-white/10 bg-black/25">
+                        <Image
+                          src="/images/praisepriestess-gallery-06.jpeg"
+                          alt="PraisePriestess gallery photo"
+                          fill
+                          sizes="(max-width: 768px) 50vw, 260px"
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="mt-6 flex items-center justify-between">
                     <div>
                       <div className="text-sm font-semibold">
                         Featured Releases
                       </div>
                       <div className="mt-1 text-xs text-zinc-300">
-                        Titles seen on major streaming listings
+                        Available on Apple Music, Amazon Music, and more
                       </div>
                     </div>
                     <div className="pp-float grid h-10 w-10 place-items-center rounded-2xl bg-white/10">
@@ -304,11 +393,11 @@ export default function Home() {
                 <div className="relative">
                   <div className="text-sm font-semibold">Artist Statement</div>
                   <div className="mt-3 text-sm leading-7 text-zinc-200">
-                    PraisePriestess delivers worship music that centers on
-                    praise and heartfelt testimony. Her listed releases carry a
-                    clear message of gratitude and celebration, inviting
-                    listeners into a sound that lifts faith and strengthens
-                    hope.
+                    With a sound built for worship and a message rooted in
+                    gratitude, PraisePriestess creates songs that carry praise,
+                    testimony, and joy. Her releases are designed to be played
+                    in devotion, shared in community, and returned to in
+                    everyday moments.
                   </div>
 
                   <div className="mt-6 rounded-2xl border border-white/10 bg-black/20 px-5 py-4 text-sm text-zinc-200">
@@ -388,9 +477,7 @@ export default function Home() {
                   Discography Timeline
                 </h2>
                 <p className="mt-2 max-w-2xl text-sm leading-7 text-zinc-200">
-                  A readable timeline of releases seen on public streaming
-                  listings. This is written so you can scan and understand the
-                  catalog at a glance.
+                  A year-by-year look at listed singles across major platforms.
                 </p>
               </div>
               <a
@@ -402,11 +489,41 @@ export default function Home() {
             </div>
           </div>
 
+          <div className="mt-8 overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-4">
+            <div className="flex items-center justify-between gap-4 px-2">
+              <div className="text-sm font-semibold">Moments</div>
+              <div className="text-xs text-zinc-300">Scroll</div>
+            </div>
+            <div className="mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-2 pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {[
+                "/images/praisepriestess-gallery-04.jpeg",
+                "/images/praisepriestess-gallery-05.jpeg",
+                "/images/praisepriestess-gallery-08.jpeg",
+                "/images/praisepriestess-gallery-09.jpeg",
+                "/images/praisepriestess-gallery-12.jpeg",
+                "/images/praisepriestess-gallery-15.jpeg",
+              ].map((src) => (
+                <div
+                  key={src}
+                  className="relative h-40 w-[260px] snap-start overflow-hidden rounded-2xl border border-white/10 bg-black/25 sm:h-44 sm:w-[300px]"
+                >
+                  <Image
+                    src={src}
+                    alt="PraisePriestess gallery photo"
+                    fill
+                    sizes="(max-width: 768px) 260px, 300px"
+                    className="object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="mt-8 grid gap-4 lg:grid-cols-[0.95fr_1.05fr]">
             <div className="rounded-3xl border border-white/10 bg-white/5 p-7">
               <div className="text-sm font-semibold">Quick Summary</div>
               <div className="mt-2 text-sm leading-7 text-zinc-200">
-                Public listings show at least{" "}
+                The public discography currently lists{" "}
                 <span className="font-semibold text-white/90">
                   {featuredSingles.length} singles
                 </span>{" "}
@@ -511,10 +628,11 @@ export default function Home() {
             <div className="flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
               <div>
                 <h2 className="text-2xl font-semibold tracking-tight">
-                  Photos & Visuals
+                  Gallery
                 </h2>
                 <p className="mt-2 max-w-2xl text-sm leading-7 text-zinc-200">
-                  A clean space for portraits, cover art, and featured visuals.
+                  A curated set of portraits and moments—built for press,
+                  bookings, and fans.
                 </p>
               </div>
               <a
@@ -526,72 +644,82 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6">
-              <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-fuchsia-500/20 blur-3xl" />
-              <div className="absolute -bottom-28 -left-28 h-96 w-96 rounded-full bg-cyan-400/15 blur-3xl" />
-              <div className="relative">
-                <div className="text-sm font-semibold">Portrait Artwork</div>
-                <div className="mt-1 text-xs text-zinc-300">
-                  PraisePriestess
-                </div>
-
-                <div className="mt-5 overflow-hidden rounded-2xl border border-white/10 bg-black/25">
+          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+            <div className="space-y-4 lg:col-span-1">
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-4">
+                <div className="relative h-[420px] overflow-hidden rounded-2xl border border-white/10 bg-black/25">
                   <Image
-                    src="/praisepriestess-portrait.svg"
-                    alt="PraisePriestess artist photo"
-                    width={900}
-                    height={1050}
-                    className="h-[420px] w-full object-cover"
+                    src={portraits[0].src}
+                    alt={portraits[0].alt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 420px"
+                    className="object-cover"
                   />
                 </div>
+                <div className="mt-4 px-1">
+                  <div className="text-sm font-semibold">Portraits</div>
+                  <div className="mt-1 text-xs leading-6 text-zinc-300">
+                    A clean, consistent look across promo photos and moments.
+                  </div>
+                </div>
+              </div>
 
-                <div className="mt-5 rounded-2xl border border-white/10 bg-black/20 px-5 py-4 text-xs leading-6 text-zinc-300">
-                  Official photos, cover art, and videos can be featured here.
+              <div className="grid grid-cols-2 gap-4">
+                <div className="relative h-[160px] overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+                  <Image
+                    src={portraits[1].src}
+                    alt={portraits[1].alt}
+                    fill
+                    sizes="(max-width: 1024px) 50vw, 220px"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative h-[160px] overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+                  <Image
+                    src={portraits[2].src}
+                    alt={portraits[2].alt}
+                    fill
+                    sizes="(max-width: 1024px) 50vw, 220px"
+                    className="object-cover"
+                  />
                 </div>
               </div>
             </div>
 
-            <div className="grid gap-4">
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-7">
-                <div className="text-sm font-semibold">Featured Visuals</div>
-                <div className="mt-2 text-sm leading-7 text-zinc-200">
-                  A showcase area for cover art, promo shots, and performance
-                  moments.
-                </div>
-                <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                  {[
-                    "Cover Art",
-                    "Promo Photos",
-                    "Live/Ministry Moments",
-                    "Brand Assets",
-                  ].map((t) => (
-                    <div
-                      key={t}
-                      className="rounded-2xl border border-white/10 bg-black/20 px-5 py-4 text-sm font-semibold text-white/90"
-                    >
-                      {t}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="grid gap-4 sm:grid-cols-3">
-                {["Feature Visual", "Cover Art", "Live Shot"].map((label) => (
-                  <div
-                    key={label}
-                    className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:border-white/20 hover:bg-white/[0.07]"
-                  >
-                    <div className="absolute inset-0 bg-[radial-gradient(600px_circle_at_30%_20%,rgba(168,85,247,0.18),transparent_55%),radial-gradient(560px_circle_at_70%_80%,rgba(34,211,238,0.14),transparent_60%)] opacity-70" />
-                    <div className="relative">
-                      <div className="text-sm font-semibold">{label}</div>
-                      <div className="mt-2 text-xs leading-6 text-zinc-300">
-                        Featured visual
-                      </div>
-                      <div className="mt-5 h-24 rounded-2xl border border-white/10 bg-black/25" />
-                    </div>
+            <div className="lg:col-span-2">
+              <div className="rounded-3xl border border-white/10 bg-white/5 p-4 sm:p-5">
+                <div className="flex items-center justify-between gap-4 px-1">
+                  <div className="text-sm font-semibold">Full Gallery</div>
+                  <div className="text-xs text-zinc-300">
+                    {galleryTiles.length} photos
                   </div>
-                ))}
+                </div>
+
+                <div className="mt-4 grid auto-rows-[140px] grid-cols-2 gap-3 sm:auto-rows-[160px] sm:gap-4 md:auto-rows-[180px] md:grid-cols-4 lg:auto-rows-[200px]">
+                  {galleryTiles.map((tile, idx) => {
+                    const colSpanClass =
+                      tile.colSpan === 2 ? "col-span-2" : "col-span-1";
+                    const rowSpanClass =
+                      tile.rowSpan === 2 ? "row-span-2" : "row-span-1";
+
+                    return (
+                      <div
+                        key={tile.src}
+                        className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-black/25 ${colSpanClass} ${rowSpanClass}`}
+                      >
+                        <Image
+                          src={tile.src}
+                          alt={tile.alt}
+                          fill
+                          sizes="(max-width: 768px) 50vw, 25vw"
+                          className="object-cover opacity-95 transition duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
+                          priority={idx < 2}
+                        />
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-80 transition group-hover:opacity-95" />
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>

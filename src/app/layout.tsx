@@ -13,12 +13,32 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: {
-    default: "PraisePriestess — Artist Profile",
+    default: "PraisePriestess — Official Profile",
     template: "%s — PraisePriestess",
   },
   description:
-    "Official artist profile for PraisePriestess: story, featured singles, and streaming links.",
+    "PraisePriestess official profile: artist story, featured releases, photos, and streaming links.",
+  openGraph: {
+    title: "PraisePriestess — Official Profile",
+    description:
+      "Artist story, featured releases, photos, and streaming links for PraisePriestess.",
+    type: "website",
+    images: [
+      {
+        url: "/images/praisepriestess-portrait-02.jpeg",
+        alt: "PraisePriestess portrait",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PraisePriestess — Official Profile",
+    description:
+      "Artist story, featured releases, photos, and streaming links for PraisePriestess.",
+    images: ["/images/praisepriestess-portrait-02.jpeg"],
+  },
 };
 
 export default function RootLayout({
