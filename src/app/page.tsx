@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HeroSlider from "./_components/HeroSlider";
 
 export default function Home() {
   const streaming = [
@@ -49,17 +50,28 @@ export default function Home() {
 
   const portraits = [
     {
-      src: "/images/praisepriestess-gallery-18.jpeg",
-      alt: "PraisePriestess gallery photo 18",
+      src: "/images/praisepriestess-portrait-01.jpeg",
+      alt: "PraisePriestess portrait photo 01",
     },
     {
-      src: "/images/praisepriestess-portrait-01.jpeg",
-      alt: "PraisePriestess gallery photo 01",
+      src: "/images/praisepriestess-portrait-02.jpeg",
+      alt: "PraisePriestess portrait photo 02",
     },
     {
       src: "/images/praisepriestess-portrait-03.jpeg",
-      alt: "PraisePriestess gallery photo 03",
+      alt: "PraisePriestess portrait photo 03",
     },
+  ] as const;
+
+  const heroImages = [
+    ...portraits,
+    { src: "/images/praisepriestess-gallery-01.jpeg", alt: "PraisePriestess photo 01" },
+    { src: "/images/praisepriestess-gallery-04.jpeg", alt: "PraisePriestess photo 04" },
+    { src: "/images/praisepriestess-gallery-05.jpeg", alt: "PraisePriestess photo 05" },
+    { src: "/images/praisepriestess-gallery-08.jpeg", alt: "PraisePriestess photo 08" },
+    { src: "/images/praisepriestess-gallery-11.jpeg", alt: "PraisePriestess photo 11" },
+    { src: "/images/praisepriestess-gallery-16.jpeg", alt: "PraisePriestess photo 16" },
+    { src: "/images/praisepriestess-gallery-18.jpeg", alt: "PraisePriestess photo 18" },
   ] as const;
 
   const galleryTiles = [
@@ -167,9 +179,12 @@ export default function Home() {
       </header>
 
       <main id="top" className="relative">
-        <section className="mx-auto max-w-6xl px-6 pb-14 pt-16 md:pb-20 md:pt-20">
+        <section className="mx-auto max-w-6xl px-6 pb-14 pt-8 md:pb-20 md:pt-12">
           <div className="grid items-start gap-10 md:grid-cols-[1.25fr_0.75fr]">
-            <div className="pp-fade-up" style={{ animationDelay: "60ms" }}>
+            <div
+              className="pp-fade-up order-last md:order-first"
+              style={{ animationDelay: "60ms" }}
+            >
               <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs text-zinc-200">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_0_6px_rgba(52,211,153,0.12)]" />
                 <span>Praise • worship • testimony • joy</span>
@@ -220,114 +235,11 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="pp-fade-up" style={{ animationDelay: "160ms" }}>
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_40px_120px_rgba(0,0,0,0.6)]">
-                <div className="absolute -right-10 -top-10 h-52 w-52 rounded-full bg-fuchsia-500/25 blur-2xl" />
-                <div className="absolute -bottom-12 -left-16 h-72 w-72 rounded-full bg-cyan-400/15 blur-3xl" />
-
-                <div className="relative">
-                  <div className="grid gap-3">
-                    <div className="grid grid-cols-2 gap-3">
-                      <div className="relative h-[140px] overflow-hidden rounded-2xl border border-white/10 bg-black/25">
-                        <Image
-                          src={portraits[0].src}
-                          alt={portraits[0].alt}
-                          fill
-                          sizes="(max-width: 768px) 50vw, 260px"
-                          className="object-cover"
-                        />
-                      </div>
-                      <div className="relative h-[140px] overflow-hidden rounded-2xl border border-white/10 bg-black/25">
-                        <Image
-                          src="/images/praisepriestess-gallery-06.jpeg"
-                          alt="PraisePriestess gallery photo"
-                          fill
-                          sizes="(max-width: 768px) 50vw, 260px"
-                          className="object-cover"
-                        />
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 flex items-center justify-between">
-                    <div>
-                      <div className="text-sm font-semibold">
-                        Featured Releases
-                      </div>
-                      <div className="mt-1 text-xs text-zinc-300">
-                        Available on Apple Music, Amazon Music, and more
-                      </div>
-                    </div>
-                    <div className="pp-float grid h-10 w-10 place-items-center rounded-2xl bg-white/10">
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="text-white/85"
-                      >
-                        <path
-                          d="M9 18V6l12-2v12"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        />
-                        <path
-                          d="M21 16a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-
-                  <div className="mt-6 space-y-3">
-                    {featuredSingles.slice(0, 4).map((song) => (
-                      <div
-                        key={song.title}
-                        className="group flex items-center justify-between rounded-2xl border border-white/10 bg-black/20 px-4 py-3 transition hover:border-white/20 hover:bg-black/30"
-                      >
-                        <div className="min-w-0">
-                          <div className="truncate text-sm font-semibold">
-                            {song.title}
-                          </div>
-                          <div className="mt-0.5 text-xs text-zinc-300">
-                            Single • {song.year}
-                          </div>
-                        </div>
-                        <div className="ml-4 inline-flex h-9 items-center gap-2 rounded-full bg-white/10 px-3 text-xs font-semibold text-white transition group-hover:bg-white/15">
-                          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                          <span>Featured</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-xs text-zinc-300">
-                    Streaming pages:{" "}
-                    {streaming.map((s, idx) => (
-                      <span key={s.href}>
-                        <a
-                          href={s.href}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="font-semibold text-white/90 underline decoration-white/20 underline-offset-4 transition hover:text-white hover:decoration-white/60"
-                        >
-                          {s.label}
-                        </a>
-                        {idx < streaming.length - 1 ? " · " : ""}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+            <div
+              className="pp-fade-up order-first md:order-last"
+              style={{ animationDelay: "160ms" }}
+            >
+              <HeroSlider images={heroImages} />
             </div>
           </div>
         </section>
@@ -512,7 +424,7 @@ export default function Home() {
                     alt="PraisePriestess gallery photo"
                     fill
                     sizes="(max-width: 768px) 260px, 300px"
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
               ))}
@@ -653,7 +565,7 @@ export default function Home() {
                     alt={portraits[0].alt}
                     fill
                     sizes="(max-width: 1024px) 100vw, 420px"
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="mt-4 px-1">
@@ -671,7 +583,7 @@ export default function Home() {
                     alt={portraits[1].alt}
                     fill
                     sizes="(max-width: 1024px) 50vw, 220px"
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="relative h-[160px] overflow-hidden rounded-3xl border border-white/10 bg-white/5">
@@ -680,7 +592,7 @@ export default function Home() {
                     alt={portraits[2].alt}
                     fill
                     sizes="(max-width: 1024px) 50vw, 220px"
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
               </div>
@@ -712,7 +624,7 @@ export default function Home() {
                           alt={tile.alt}
                           fill
                           sizes="(max-width: 768px) 50vw, 25vw"
-                          className="object-cover opacity-95 transition duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
+                          className="object-cover object-top opacity-95 transition duration-500 group-hover:scale-[1.03] group-hover:opacity-100"
                           priority={idx < 2}
                         />
                         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-80 transition group-hover:opacity-95" />
